@@ -1,12 +1,12 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 
-if "df" not in st.session_state:
-    st.session_state.df = pd.DataFrame(
-        np.random.randn(20, 2), columns=["x", "y"])
+# Define the pages
+main_page = st.Page("pages/main_page.py", title="Main Page", icon="🎈")
+page_2 = st.Page("pages/page_2.py", title="Page 2", icon="❄️")
+page_3 = st.Page("pages/page_3.py", title="Page 3", icon="🎉")
 
-st.header("Choose a datapoint color")
-color = st.color_picker("Color", "#FF0000")
-st.divider()
-st.scatter_chart(st.session_state.df, x="x", y="y", color=color)
+# Set up navigation
+pg = st.navigation([main_page, page_2, page_3])
+
+# Run the selected page
+pg.run()
