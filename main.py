@@ -7,10 +7,11 @@ page_3 = st.Page("pages/page_3.py", title="Page 3", icon="🎉")
 uber_page = st.Page('pages/uber_pickups.py')
 counter_page = st.Page('pages/counter.py')
 forms_page = st.Page('pages/forms.py')
+fragments_page = st.Page('pages/fragments.py')
 
 # Set up navigation
 pg = st.navigation(
-    [main_page, page_2, page_3, uber_page, counter_page, forms_page])
+    [main_page, page_2, page_3, uber_page, counter_page, forms_page, fragments_page])
 
 # Run the selected page
 pg.run()
